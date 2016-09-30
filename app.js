@@ -15,6 +15,7 @@ console.log(dir)
 
 function smiler(opts) {
     opts = opts || {}
+
     opts.autoprefixer = opts.autoprefixer !== false
     opts.sourcemaps = opts.sourcemaps !== false
 
@@ -59,7 +60,25 @@ function smiler(opts) {
         return task
     })
 
-    gulp.start('scss')
+    gulp.task('js', function() {
+        // TODO
+    })
+
+    if (opts.start) {
+        if (typeof opts.start === 'string') {
+            opts.start = [opts.start]
+        }
+
+        if (!opts.start instanceof Array) {
+            throw new Error('opts.start must be a string or an array of strings')
+        }
+    } else {
+        opts.start = ['scss', 'js']
+    }
+
+    opts.start.forEach((opt) => {
+        gulp.start(opt)
+    })
 }
 
 module.exports = smiler
