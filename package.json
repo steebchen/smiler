@@ -1,6 +1,6 @@
 {
   "name": "smiler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple compiler for scss/sass/js files",
   "main": "app.js",
   "scripts": {

@@ -69,7 +69,7 @@ function smiler(opts) {
             opts.start = [opts.start]
         }
 
-        if (!opts.start instanceof Array) {
+        if (!(opts.start instanceof Array)) {
             throw new Error('opts.start must be a string or an array of strings')
         }
     } else {
