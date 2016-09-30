@@ -20,7 +20,7 @@ function smiler(opts) {
     opts.sourcemaps = opts.sourcemaps !== false
 
     gulp.task('scss', function() {
-        let task = gulp.src(path.join(dir, '**', '*.scss'))
+        let task = gulp.src(path.join(dir, '*.scss'))
 
         if (opts.sourcemaps) {
             task = task.pipe(sourcemaps.init())
